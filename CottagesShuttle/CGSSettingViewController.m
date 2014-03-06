@@ -145,14 +145,18 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     int selectedStop = (indexPath.section-1)*3 + indexPath.row + 1;
-
+    
     // Set Content
     if ([cellID isEqualToString:@"timeCell"]) {
-        <#statements#>
+        cell.textLabel.text = [self.stops.stopOptions objectForKey:[NSNumber numberWithInt:selectedStop]];
+        cell.detailTextLabel.text = @"0 min";
+    }else if([cellID isEqualToString:@"stopCell"]){
+        cell.textLabel.text = @"You selected stop: ";
+        cell.detailTextLabel.text = [self.stops.stopOptions objectForKey:
+                                     [NSNumber numberWithInt:self.stops.selectedStopIndex]];
     }
-    
     // Select Stop
-        if (selectedStop == self.stops.selectedStopIndex && self.stops.selectedStopIndex!=0) {
+    if (selectedStop == self.stops.selectedStopIndex && self.stops.selectedStopIndex!=0) {
         cell.backgroundColor = [UIColor lightGrayColor];
     }else{
         cell.backgroundColor = [UIColor whiteColor];

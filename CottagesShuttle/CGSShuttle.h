@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface CGSShuttle : NSObject
+
+@property (nonatomic, strong) CLLocation* location;
 
 @end

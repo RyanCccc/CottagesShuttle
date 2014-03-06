@@ -11,6 +11,8 @@
 @interface CGSStop : NSObject
 
 @property (nonatomic, strong) NSDictionary *stopOptions;
+@property (nonatomic, strong) NSDictionary *const locations;
+@property (nonatomic, strong) NSDictionary *remainTime;
 @property (nonatomic) NSInteger selectedStopIndex;
 
 @end
